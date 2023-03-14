@@ -1,0 +1,1200 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'akuaa/styles.css' %}">
+  {% if title %}
+  <title>DaSpinstress - {{ title }}</title>
+  {% else %}
+  <title>DaSpinstress</title>
+  {% endif %}
+</head>
+<!-- 3A1078, 4E31AA, 2F58CD, 3795BD -->
+<style>
+  /* Navbar */
+
+  .nav-link {
+    background-image: linear-gradient(to right,
+        #2F58CD,
+        #2F58CD 50%,
+        #fff 50%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-link:before {
+    content: '';
+    background: #2F58CD;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-link:hover {
+    background-position: 0;
+  }
+
+  .nav-link:hover::before {
+    width: 100%;
+  }
+
+  .navbar {
+    transition: all 0.5s;
+    overflow: hidden;
+
+  }
+
+  .bg-steel {
+    background-color: transparent !important;
+    transition: 0.75s ease;
+  }
+
+  .bg-steel.scrolled {
+    background: #4E31AA !important;
+    box-shadow: 0 3px 10px #4E31AA;
+  }
+
+  /* End Navbar */
+
+  .home-bg {
+    background-image: url("{% static 'akuaa/images/splash.jpg' %}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100%;
+    height: 80vh;
+  }
+
+  .home-bg::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 80vh;
+    background: #000;
+    opacity: 0.7;
+  }
+
+  .welcome {
+    padding-top: 20%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .btn {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .btn:hover {
+    background-color: #2F58CD;
+  }
+
+  /* 
+    .carousel-item {
+      background: no-repeat scroll center scroll;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+    
+    .carousel-item::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: #000;
+      opacity: 0.5;
+    }
+    */
+
+
+  .location {
+    overflow: hidden;
+    padding-bottom: 20px;
+  }
+
+  .contact-form {
+    background-color: #EEEEEE;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    padding: 30px;
+  }
+
+  /* Footer */
+  .footer-title {
+    position: relative;
+    color: #2F58CD;
+    font-size: 23px;
+  }
+
+  .footer-list {
+    list-style-type: circle;
+    color: #fff;
+  }
+
+  .footer-links {
+    position: relative;
+    color: #fff;
+  }
+
+  .footer-links:hover {
+    text-decoration: none;
+    color: #2F58CD;
+  }
+
+  .footer-text {
+    color: #fff;
+    text-align: justify;
+  }
+
+  .social {
+    position: relative;
+    ;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .social li {
+    list-style: none;
+  }
+
+  .social li a {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #404040;
+    margin: 0 10px;
+    transition: .5s;
+  }
+
+  .social li a span {
+    position: absolute;
+    transition: transform .5s;
+  }
+
+  .social li a span:nth-child(1),
+  .social li a span:nth-child(3) {
+    width: 100%;
+    height: 3px;
+    background: #2F58CD;
+  }
+
+  .social li a span:nth-child(1) {
+    top: 0;
+    left: 0;
+    transform-origin: right;
+  }
+
+  .social li a:hover span:nth-child(1) {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .5s;
+  }
+
+  .social li a span:nth-child(3) {
+    bottom: 0;
+    left: 0;
+    transform-origin: left;
+  }
+
+  .social li a:hover span:nth-child(3) {
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .5s;
+  }
+
+  .social li a span:nth-child(2),
+  .social li a span:nth-child(4) {
+    width: 3px;
+    height: 100%;
+    background: #2F58CD;
+  }
+
+  .social li a span:nth-child(2) {
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    transform-origin: bottom;
+  }
+
+  .social li a:hover span:nth-child(2) {
+    transform: scale(1);
+    transform-origin: top;
+    transition: transform .5s;
+  }
+
+  .social li a span:nth-child(4) {
+    top: 0;
+    right: 0;
+    transform: scale(0);
+    transform-origin: top;
+  }
+
+  .social li a:hover span:nth-child(4) {
+    transform: scale(1);
+    transform-origin: bottom;
+    transition: transform .5s;
+  }
+
+  .facebook:hover {
+    color: #3b5998;
+  }
+
+  .facebook:hover span {
+    background: #3b5998;
+  }
+
+  .twitter:hover {
+    color: #1da1f2;
+  }
+
+  .twitter:hover span {
+    background: #1da1f2;
+  }
+
+  .instagram:hover {
+    color: #c32aa3;
+  }
+
+  .instagram:hover span {
+    background: #c32aa3;
+  }
+
+  .google:hover {
+    color: #dd4b39;
+  }
+
+  .google:hover span {
+    background: #dd4b39;
+  }
+
+  .social li a .twitter {
+    color: #1da1f2;
+  }
+
+  .social li a:hover:nth-child(3) {
+    color: #c32aa3;
+  }
+
+  .social li a:hover:nth-child(4) {
+    color: #dd4b39;
+  }
+
+  /* ----------End Footer---------- */
+
+  /* ----------headings------------- */
+
+  .page-title {
+    position: relative;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: Merrimeter;
+
+  }
+
+  .about-bg {
+    background-image: url("{% static 'akuaa/images/testimonial2.jpg' %}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 25vh;
+  }
+
+  .about-bg::before {
+    content: 'service';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0.5;
+    height: 25vh;
+  }
+
+  .service-bg {
+    background-image: url("{% static 'akuaa/images/testimonial-bg.jpg' %}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 25vh;
+  }
+
+  .service-bg::before {
+    content: 'service';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0.5;
+    height: 25vh;
+  }
+
+  .foundation-bg {
+    background-image: url("{% static 'akuaa/images/entertainment.jpeg' %}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 25vh;
+  }
+
+  .foundation-bg::before {
+    content: 'service';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0.5;
+    height: 25vh;
+  }
+
+  .career-bg {
+    background-image: url("{% static 'akuaa/images/testimonial-bg.jpg' %}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 25vh;
+  }
+
+  .career-bg::before {
+    content: 'service';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0.5;
+    height: 25vh;
+  }
+
+  .contact-bg {
+    background-image: url("{% static 'akuaa/images/dj-bg.jpeg' %}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 25vh;
+  }
+
+  .contact-bg::before {
+    content: 'contact';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0.5;
+    height: 25vh;
+  }
+
+  /* ------------heading close-------------*/
+
+  .heading {
+    text-align: center;
+    color: #454343;
+    font-size: 30px;
+    font-weight: 700;
+    position: relative;
+    margin-bottom: 70px;
+    text-transform: uppercase;
+    z-index: 999;
+  }
+
+  .white-heading {
+    color: #ffffff;
+  }
+
+  .heading:after {
+    content: ' ';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    height: 40px;
+    width: 180px;
+    border-radius: 4px;
+    transform: translateX(-50%);
+    background: url(img/heading-line.png);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .white-heading:after {
+    background: url(https://i.ibb.co/d7tSD1R/heading-line-white.png);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .heading span {
+    font-size: 18px;
+    display: block;
+    font-weight: 500;
+  }
+
+  .white-heading span {
+    color: #ffffff;
+  }
+
+  /*-----Testimonial-------*/
+
+  .testimonial:after {
+    position: absolute;
+    top: -0 !important;
+    left: 0;
+    content: " ";
+    background: url();
+    background-size: 100% 100px;
+    width: 100%;
+    height: 100px;
+    float: left;
+    z-index: 99;
+  }
+
+  .testimonial {
+    min-height: 375px;
+    position: relative;
+    background: url("{% static 'akuaa/images/testimonial2.jpg' %}");
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .testimonial::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: 0.7;
+  }
+
+  #testimonial4 .carousel-inner:hover {
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+  }
+
+  #testimonial4 .carousel-inner:active {
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+  }
+
+  #testimonial4 .carousel-inner .item {
+    overflow: hidden;
+  }
+
+  .testimonial4_indicators .carousel-indicators {
+    left: 0;
+    margin: 0;
+    width: 100%;
+    font-size: 0;
+    height: 20px;
+    bottom: 15px;
+    padding: 0 5px;
+    cursor: e-resize;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: absolute;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .testimonial4_indicators .carousel-indicators li {
+    padding: 0;
+    width: 14px;
+    height: 14px;
+    border: none;
+    text-indent: 0;
+    margin: 2px 3px;
+    cursor: pointer;
+    display: inline-block;
+    background: #ffffff;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+  }
+
+  .testimonial4_indicators .carousel-indicators .active {
+    padding: 0;
+    width: 14px;
+    height: 14px;
+    border: none;
+    margin: 2px 3px;
+    background-color: #9dd3af;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+  }
+
+  .testimonial4_indicators .carousel-indicators::-webkit-scrollbar {
+    height: 3px;
+  }
+
+  .testimonial4_indicators .carousel-indicators::-webkit-scrollbar-thumb {
+    background: #eeeeee;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+  }
+
+  .testimonial4_control_button .carousel-control {
+    top: 175px;
+    opacity: 1;
+    width: 40px;
+    bottom: auto;
+    height: 40px;
+    font-size: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    overflow: hidden;
+    line-height: 38px;
+    text-shadow: none;
+    text-align: center;
+    position: absolute;
+    background: transparent;
+    border: 2px solid #ffffff;
+    text-transform: uppercase;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: all 0.6s cubic-bezier(0.3, 1, 0, 1);
+    transition: all 0.6s cubic-bezier(0.3, 1, 0, 1);
+  }
+
+  .testimonial4_control_button .carousel-control.left {
+    left: 7%;
+    top: 50%;
+    right: auto;
+  }
+
+  .testimonial4_control_button .carousel-control.right {
+    right: 7%;
+    top: 50%;
+    left: auto;
+  }
+
+  .testimonial4_control_button .carousel-control.left:hover,
+  .testimonial4_control_button .carousel-control.right:hover {
+    color: #000;
+    background: #fff;
+    border: 2px solid #fff;
+  }
+
+  .testimonial4_header {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 550px;
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+    position: relative;
+  }
+
+  .testimonial4_header h4 {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 600;
+    position: relative;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .testimonial4_slide {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+  }
+
+  .testimonial4_slide img {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 136px;
+    height: 136px;
+    margin: auto;
+    display: block;
+    color: #f2f2f2;
+    font-size: 18px;
+    line-height: 46px;
+    text-align: center;
+    position: relative;
+    border-radius: 50%;
+    box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.23);
+    -o-box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.23);
+    -webkit-box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.23);
+  }
+
+  .testimonial4_slide p {
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 1.4;
+    margin: 40px 0 20px 0;
+  }
+
+  .testimonial4_slide h4 {
+    color: #ffffff;
+    font-size: 22px;
+  }
+
+  .testimonial .carousel {
+    padding-bottom: 50px;
+  }
+
+  .testimonial .carousel-control-next-icon,
+  .testimonial .carousel-control-prev-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  /* ------testimonial  close-------*/
+
+  /* -------------skills ------------ */
+  .detail {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .bar {
+    position: relative;
+    border: 2px solid #2F58CD;
+    border-radius: 20px;
+  }
+
+  .bar div {
+    position: relative;
+    width: 0;
+    height: 9px;
+    border-radius: 10px;
+    background-color: #2F58CD;
+  }
+
+  .skills:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  #python-bar {
+    animation: python-fill 2s forwards;
+  }
+
+  @keyframes python-fill {
+    100% {
+      width: 95%;
+    }
+  }
+
+  #html-bar {
+    animation: html-fill 2s forwards;
+  }
+
+  @keyframes html-fill {
+    100% {
+      width: 94%;
+    }
+  }
+
+  #css-bar {
+    animation: css-fill 2s forwards;
+  }
+
+  @keyframes css-fill {
+    100% {
+      width: 89%;
+    }
+  }
+
+  #javascript-bar {
+    animation: javascript-fill 2s forwards;
+  }
+
+  @keyframes javascript-fill {
+    100% {
+      width: 80%;
+    }
+  }
+
+  .display-7 {
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+  }
+
+  .display-8 {
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    float: right;
+  }
+
+  /* ------------skills close------------ */
+
+  /* -------Team Template start-------- */
+
+  .team-link {
+    color: #333333;
+    font-weight: 400;
+    outline: none;
+    text-decoration: none;
+    transition: 0.5s;
+  }
+
+  .team-link:hover,
+  .team-link:focus {
+    outline: none;
+    text-decoration: none;
+  }
+
+  .team-para {
+    padding: 0;
+    margin: 0 0 15px 0;
+    color: #454545;
+    font-weight: 300;
+  }
+
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    padding: 0;
+    margin: 0 0 15px 0;
+    color: #333333;
+    font-weight: 700;
+  }
+
+  .team-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .section-title {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 80px;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .section-title h1 {
+    display: inline-block;
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #000000;
+    margin: 0 0 5px;
+    position: relative;
+  }
+
+  .section-title h1::before {
+    content: '';
+    left: 0;
+    position: absolute;
+    height: 3px;
+    right: 32%;
+    background-color: #2F58CD;
+    bottom: -5px;
+  }
+
+  .section-title h1::before {
+    left: 30%;
+  }
+
+  .team-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+
+  .column {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .team {
+    margin-bottom: 30px;
+  }
+
+  .team .team-img {
+    position: relative;
+    font-size: 0;
+    text-align: center;
+  }
+
+  .team .team-img img {
+    width: 160px;
+    height: auto;
+    border-radius: 100%;
+    border: 20px solid #f3f4fa;
+  }
+
+  .team .team-content {
+    padding: 80px 20px 20px 20px;
+    margin-top: -80px;
+    text-align: center;
+    background: #f3f4fa;
+    border-radius: 10px;
+  }
+
+  .team .team-content h2 {
+    font-size: 25px;
+    font-weight: 400;
+    letter-spacing: 2px;
+  }
+
+  .team .team-content h3 {
+    font-size: 16px;
+    font-weight: 300;
+  }
+
+  .team .team-content h4 {
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-style: italic;
+    margin-bottom: 0;
+  }
+
+  .team .team-content p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+
+  .team .team-social {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 35px;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, .6);
+    transition: all .3s;
+    font-size: 0;
+    z-index: 1;
+    opacity: 0;
+  }
+
+  .team:hover .team-social {
+    opacity: 1;
+  }
+
+  .team .team-social a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+    padding: 11px 0 10px 0;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 16px;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 10px;
+    transition: all .3s;
+    margin-top: 50px;
+  }
+
+  .team .team-social a.social-tw {
+    background: #00acee;
+  }
+
+  .team .team-social a.social-fb {
+    background: #3b5998;
+  }
+
+  .team .team-social a.social-li {
+    background: #0e76a8;
+  }
+
+  .team .team-social a.social-in {
+    background: #3f729b;
+  }
+
+  .team .team-social a.social-yt {
+    background: #c4302b;
+  }
+
+  .team .team-social a:last-child {
+    margin-right: 0;
+  }
+
+  .team:hover .team-social a {
+    margin-top: 0;
+  }
+
+  .team .team-social a:hover {
+    background: #222222;
+  }
+
+
+  /* Mobile Responsive */
+
+  @media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
+
+    .column {
+      max-width: 50%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+
+    .column {
+      max-width: 33.333333%;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+
+    .column {
+      max-width: 25%;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1140px;
+    }
+
+  }
+
+  /* --------------Team Template End---------------- */
+</style>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-light bg-steel fixed-top">
+    <div class="container">
+      <img src="{% static 'akuaa/images/BLANK-logo.png' %}" height="50px" alt="Da">
+      <a class="navbar-brand" href="" alt="">
+        <img class="d-none d-md-block" src="{% static 'akuaa/images/DaSpinstress-LLC-Text.png' %}" height="50px" alt="">
+      </a>
+      <button style="background-color: #fff;" class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'service' %}">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'foundation' %}">Foundation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'career' %}">Careers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </nav>
+  {% block content %}{% endblock %}
+  <section class="footer pb-5" style="background-color: #3A1078;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 pt-5">
+          <h3 class="footer-title">Useful Links</h3>
+          <div class="pt-3">
+            <ul>
+              <li class="footer-list">
+                <a class="footer-links" href="">Home</a>
+              </li>
+              <li class="footer-list">
+                <a class="footer-links" href="">About Us</a>
+              </li>
+              <li class="footer-list">
+                <a class="footer-links" href="">Agency</a>
+              </li>
+              <li class="footer-list">
+                <a class="footer-links" href="">Talent</a>
+              </li>
+              <li class="footer-list">
+                <a class="footer-links" href="">Foundation</a>
+              </li>
+              <li class="footer-list">
+                <a class="footer-links" href="">Private Policy</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 pt-5">
+          <h3 class="footer-title">Our Services</h3>
+          <div class="pt-3">
+            <ul>
+              <li class="footer-list">
+                <a class="footer-links" href="">Talent Management</a>
+              </li>
+              <li class="footer-list">
+                <a class="footer-links" href="">PR & Media Services</a>
+              </li>
+              <li class="footer-list">
+                <a class="footer-links" href="">Event Management</a>
+              </li>
+              <li class="footer-list">
+                <a class="footer-links" href="">Digital Marketing Services</a>
+              </li>
+              <li class="footer-list">
+                <a class="footer-links" href="">Media Production</a>
+              </li>
+              <li class="footer-list">
+                <a class="footer-links" href="">Influencer Management</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 pt-5">
+          <h3 class="footer-title">Contact Us</h3>
+          <div class="footer-text pt-3">
+            <h6>10 Marsh lane, Elkton, Maryland, 21921, United States</h6>
+            <br>
+            <h6>Phone: +1 (443) 655-3808</h6>
+            <h6>Email: info@daspinstressllc.com</h6>
+          </div>
+        </div>
+        <div class="col-md-3 pt-5">
+          <h3 class="footer-title">About DaSpinstress</h3>
+          <div class="footer-text pt-3">
+            <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h6>
+          </div>
+
+          <ul class="social">
+            <li class="social-links">
+              <a class="facebook" href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a class="twitter" href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a class="instagram" href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a class="google" href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <i class="fa fa-google-plus" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <script>
+    $(window).scroll(function () {
+      $('nav').toggleClass('scrolled', $(this).scrollTop() > 100)
+    })
+  </script>
+</body>
+
+</html>
