@@ -1038,8 +1038,10 @@
 <body>
   <nav class="navbar navbar-expand-md navbar-light bg-steel fixed-top">
     <div class="container">
-      <img src="{% static 'akuaa/images/BLANK-logo.png' %}" height="50px" alt="Da">
-      <a class="navbar-brand" href="" alt="">
+      <a href="{% url 'home' %}">
+        <img src="{% static 'akuaa/images/BLANK-logo.png' %}" height="50px" alt="Da">
+      </a>
+      <a class="navbar-brand" href="{% url 'home' %}" alt="">
         <img class="d-none d-md-block" src="{% static 'akuaa/images/DaSpinstress-LLC-Text.png' %}" height="50px" alt="">
       </a>
       <button style="background-color: #fff;" class="navbar-toggler" type="button" data-toggle="collapse"
