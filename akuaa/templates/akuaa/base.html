@@ -1033,6 +1033,41 @@
   }
 
   /* --------------Team Template End---------------- */
+
+  /* ------------Counters--------------- */
+
+  .counter-bg {
+    background-image: url("{% static 'akuaa/images/rate-bg1.jpg' %}");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 0 5px;
+}
+
+.counter-row {
+    margin: 0 -5px;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+.card-img {
+  color: white;
+  padding: 16px;
+  text-align: center;
+  position: relative;
+}
+  /* ------------Counters close ----------*/
+
 </style>
 
 <body>
@@ -1132,7 +1167,7 @@
           <div class="footer-text pt-3">
             <h6>10 Marsh lane, Elkton, Maryland, 21921, United States</h6>
             <br>
-            <h6>Phone: +1 (443) 655-3808</h6>
+            <h6>Call: +1 (443) 655-3808</h6>
             <h6>Email: info@daspinstressllc.com</h6>
           </div>
         </div>
@@ -1187,6 +1222,7 @@
   </section>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="{% static 'index.js' %}"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
