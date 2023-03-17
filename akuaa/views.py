@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import *
 
 # Create your views here.
 def home(request):
@@ -29,6 +30,14 @@ def career(request):
     return render(request, 'akuaa/career.html', context)
 
 def contact(request):
+    if request.method == "POST":
+        name = request.POST['name']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        message = request.POST['message']
+        contact = Contact(name=name, email=email, phone=phone, message=message)
+        contact.save()
+        return render(request, 'akuaa/contact.html')
     context = {
         'title': 'Contact',
     }
