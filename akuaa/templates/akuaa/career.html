@@ -19,7 +19,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form style="background-color: #EEE; padding:10%" method="POST" class="pt-4">
+                <form style="background-color: #EEE; padding:10%" method="POST" class="pt-4" enctype="multipart/form-data">
                     {% csrf_token %}
                     <h3 style="font-family: Merrimeter;"  class="text-center">Fill the form below to submit your resume</h3>
                     <div class="form-group">
@@ -44,39 +44,47 @@
                     </div>
                     <div class="form-group mt-2">
                         <label class="required" for="linkedin">LinkedIn Profile</label>
-                        <input type="text" class="form-control form-control-lg mt-2" id="linkedin" name="linkedin">
+                        <input type="text" class="form-control form-control-lg mt-2" id="linkedin" name="linkedin" placeholder="Paste your link">
                     </div>
                     <div class="form-group mt-2">
                         <label for="portfolio">Portfilio</label>
-                        <input type="text" class="form-control form-control-lg mt-2" id="portfilio" name="portfolio">
+                        <input type="text" class="form-control form-control-lg mt-2" id="portfilio" name="portfolio" placeholder="Paste your link">
                     </div>
                     <div class="form-group mt-2">
-                        <label class="required" for="authorize">Are you authorized to work in the United States for any employment?</label>
-                        <select class="custom-select my-1 mr-sm-2" id="authorize">
+                        <label class="required" for="choice1">Are you authorized to work in the United States for any employment?</label>
+                        <input type="text" class="form-control form-control-lg mt-2" id="choice1" name="choice1" placeholder="Yes or No">
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="choice2">Do you now or in the future require sponsorship to continue working in the United States?</label>
+                        <input type="text" class="form-control form-control-lg mt-2" id="choice2" name="choice2" placeholder="Yes or No">
+                    </div>
+                    <!-- <div class="form-group mt-2">
+                        <label class="required" for="choice1">Are you authorized to work in the United States for any employment?</label>
+                        <select class="custom-select my-1 mr-sm-2" id="choice1">
                             <option selected>--</option>
                             <option value="1">Yes</option>
                             <option value="2">No</option>
                         </select>
                     </div>
                     <div class="form-group mt-2">
-                        <label class="required" for="sponsorship">Do you now or in the future require sponsorship to continue working in the United States?</label>
-                        <select class="custom-select my-1 mr-sm-2" id="sponsorship">
+                        <label class="required" for="choice2">Do you now or in the future require sponsorship to continue working in the United States?</label>
+                        <select class="custom-select my-1 mr-sm-2" id="choice2">
                             <option selected>--</option>
                             <option value="1">Yes</option>
                             <option value="2">No</option>
                         </select>
-                    </div>
+                    </div> -->
                     <!-- <div class="form-group mt-2">
                         <textarea type="text" class="form-control mt-2" id="message" name="message" rows="4"
                             placeholder="Message"></textarea>
                     </div> -->
                     <div class="form-group mt-2">
                         <label class="required" for="resume">Resume/CV</label>
-                        <input type="file" class="form-control-file" id="resume">
+                        <input type="file" class="form-control-file" id="resume" name="resume">
                     </div>
                     <div class="form-group mt-2">
                         <label for="cover_letter">Cover Letter</label>
-                        <input type="file" class="form-control-file" id="cover_letter">
+                        <input type="file" class="form-control-file" id="cover_letter" name="cover_letter">
                     </div>
                         <button type="submit"
                             class="btn btn-outline-secondary mt-2">Submit

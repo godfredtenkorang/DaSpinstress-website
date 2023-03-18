@@ -24,8 +24,25 @@ def foundation(request):
     }
     return render(request, 'akuaa/foundation.html', context)
 def career(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        position = request.POST['position']
+        location = request.POST['location']
+        linkedin = request.POST['linkedin']
+        portfolio = request.POST['portfolio']
+        choice1 = request.POST['choice1']
+        choice2 = request.POST['choice2']
+        resume = request.FILES['resume']
+        cover_letter = request.FILES['cover_letter']
+        career = Career(name=name, email=email, phone=phone, position=position, location=location, linkedin=linkedin, portfolio=portfolio, choice1=choice1, choice2=choice2, resume=resume, cover_letter=cover_letter)
+        career.save()
+    
+        
     context = {
         'title': 'Career',
+        
     }
     return render(request, 'akuaa/career.html', context)
 
