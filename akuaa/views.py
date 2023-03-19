@@ -3,7 +3,14 @@ from .models import *
 
 # Create your views here.
 def home(request):
-    return render(request, 'akuaa/home.html')
+    blogs = Blog.objects.all()
+    news = LatestNews.objects.all()
+    
+    context = {
+        'blogs':blogs,
+        'news':news
+    }
+    return render(request, 'akuaa/home.html', context)
 
 
 def about(request):
@@ -25,7 +32,7 @@ def foundation(request):
     return render(request, 'akuaa/foundation.html', context)
 def career(request):
     if request.method == 'POST':
-        name = request.POST['name']
+        fullname = request.POST['fullname']
         email = request.POST['email']
         phone = request.POST['phone']
         position = request.POST['position']
@@ -36,7 +43,7 @@ def career(request):
         choice2 = request.POST['choice2']
         resume = request.FILES['resume']
         cover_letter = request.FILES['cover_letter']
-        career = Career(name=name, email=email, phone=phone, position=position, location=location, linkedin=linkedin, portfolio=portfolio, choice1=choice1, choice2=choice2, resume=resume, cover_letter=cover_letter)
+        career = Career(name=fullname, email=email, phone=phone, position=position, location=location, linkedin=linkedin, portfolio=portfolio, choice1=choice1, choice2=choice2, resume=resume, cover_letter=cover_letter)
         career.save()
     
         

@@ -65,42 +65,25 @@
         </div>
     </div>
 </section> -->
-<section class="next-sec mb-3">
+<section class="next-sec mb-3 pt-3">
     <div class="section-title">
         <h1>Blog</h1>
     </div>
     <div class="container">
         <div class="row">
+            {% for blog in blogs %}
             <div class="col-md-4 d-flex justify-content-center">
                 <div class="card mb-3" style="width: 20rem;">
-                    <img src="{% static 'akuaa/images/foundation.jpeg' %}" class="card-img-top" alt="...">
+                    <img src="{{ blog.image.url }}" height="350px" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">12/12/23</p>
-                        <a href="#" class="btn btn-outline-secondary">Read More</a>
+                        <h4 class="card-title">{{ blog.title }}</h4>
+                        <p class="card-text">{{ blog.content }}</p>
+                        <a class="links" href="#">{{ blog.author }}</a>
+                        <small>{{ blog.date_posted|date:"F d, Y" }}</small>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <div class="card mb-3" style="width: 20rem;">
-                    <img src="{% static 'akuaa/images/foundation.jpeg' %}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">12/12/23</p>
-                        <a href="#" class="btn btn-outline-secondary">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <div class="card mb-3" style="width: 20rem;">
-                    <img src="{% static 'akuaa/images/foundation.jpeg' %}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">12/12/23</p>
-                        <a href="#" class="btn btn-outline-secondary">Read More</a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
@@ -141,7 +124,7 @@
         </div>
     </div>
 </section>
-<section class="latest-news">
+<section class="latest-news pt-3">
     <div class="section-title">
         <h1>Latest News</h1>
         <br>
@@ -150,39 +133,19 @@
     </div>
     <div class="container">
         <div class="row">
+            {% for new in news %}
             <div class="col-md-4 d-flex justify-content-center">
                 <div class="card mb-3" style="width: 20rem;">
-                    <img src="{% static 'akuaa/images/foundation.jpeg' %}" class="card-img-top" alt="...">
+                    <img src="{{ new.image.url }}" height="350px" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <h5 class="card-text">content</h5>
-                        <a href="">Read More</a>
-                        <small>date</small>
+                        <h4 class="card-title">{{ new.title }}</h4>
+                        <p class="card-text">{{ new.content }}</p>
+                        <a class="links" href="{{ new.link }}">Read More</a>
+                        <small>{{ new.date|date:"F d, Y" }}</small>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <div class="card mb-3" style="width: 20rem;">
-                    <img src="{% static 'akuaa/images/foundation.jpeg' %}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <h5 class="card-text">content</h5>
-                        <a href="">Read More</a>
-                        <small>date</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <div class="card mb-3" style="width: 20rem;">
-                    <img src="{% static 'akuaa/images/foundation.jpeg' %}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <h5 class="card-text">content</h5>
-                        <a href="">Read More</a>
-                        <small>date</small>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
