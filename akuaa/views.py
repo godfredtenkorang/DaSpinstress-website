@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import *
+from django.utils.datastructures import MultiValueDictKeyError
 
 # Create your views here.
 def home(request):
@@ -41,8 +42,14 @@ def career(request):
         portfolio = request.POST['portfolio']
         choice1 = request.POST['choice1']
         choice2 = request.POST['choice2']
-        resume = request.FILES['resume']
-        cover_letter = request.FILES['cover_letter']
+        try:
+            resume = request.FILES['resume']
+        except MultiValueDictKeyError:
+            resume = False
+        try:
+            cover_letter = request.FILES['cover_letter']
+        except MultiValueDictKeyError:
+            cover_letter = False
         career = Career(name=fullname, email=email, phone=phone, position=position, location=location, linkedin=linkedin, portfolio=portfolio, choice1=choice1, choice2=choice2, resume=resume, cover_letter=cover_letter)
         career.save()
     
