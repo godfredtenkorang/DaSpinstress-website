@@ -4,8 +4,8 @@ from django.utils.datastructures import MultiValueDictKeyError
 
 # Create your views here.
 def home(request):
-    blogs = Blog.objects.all()
-    news = LatestNews.objects.all()
+    blogs = Blog.objects.order_by('-date_posted')
+    news = LatestNews.objects.order_by('-date')
     
     context = {
         'blogs':blogs,
@@ -73,3 +73,6 @@ def contact(request):
         'title': 'Contact',
     }
     return render(request, 'akuaa/contact.html', context)
+
+def book(request):
+    return render(request, 'akuaa/book.html')

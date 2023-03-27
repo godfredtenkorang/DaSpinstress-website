@@ -112,7 +112,8 @@
 
   .btn {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
   }
 
   .btn:hover {
@@ -1074,6 +1075,250 @@
 .links:hover {
   text-decoration: none;
   color: #2F58CD;
+}
+/*--------------Entertainment Section------------*/
+
+
+
+.team-para {
+  padding: 0;
+  margin: 0 0 15px 0;
+  color: #454545;
+  font-weight: 300;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  padding: 0;
+  margin: 0 0 15px 0;
+  color: #333333;
+  font-weight: 700;
+}
+
+.dj-img {
+  width: 100%;
+  height: auto;
+}
+
+.section-title {
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.section-title h1 {
+  display: inline-block;
+  font-size: 35px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 5px;
+  position: relative;
+}
+
+.section-title h1::before {
+  content: '';
+  left: 0;
+  position: absolute;
+  height: 3px;
+  right: 32%;
+  background-color: #2F58CD;
+  bottom: -5px;
+}
+
+.section-title h1::before {
+  left: 30%;
+}
+
+.entertain-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.column2 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.entertainment {
+  margin-bottom: 30px;
+}
+
+.entertainment .dj-img {
+  position: relative;
+  font-size: 0;
+  text-align: center;
+}
+
+.entertainment .dj-img img {
+  width: 160px;
+  height: 160px;
+  border-radius: 100%;
+  border: 20px solid #f3f4fa;
+}
+
+.entertainment .entertain-content {
+  padding: 80px 20px 20px 20px;
+  margin-top: -80px;
+  text-align: center;
+  background: #f3f4fa;
+  border-radius: 10px;
+}
+
+.entertainment .entertain-content h2 {
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.entertainment .entertain-content h3 {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.entertainment .entertain-content h4 {
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.entertainment .entertain-content p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.entertainment .dj-social {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.entertainment .dj-social a {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.entertainment .dj-social a.social-tw {
+  background: #00acee;
+}
+
+.entertainment .dj-social a.social-fb {
+  background: #3b5998;
+}
+
+.entertainment .dj-social a.social-li {
+  background: #0e76a8;
+}
+
+.entertainment .dj-social a.social-in {
+  background: #3f729b;
+}
+
+.entertainment .dj-social a.social-yt {
+  background: #c4302b;
+}
+
+.entertainment .dj-social a:last-child {
+  margin-right: 0;
+}
+
+.entertainment:hover .dj-social a {
+  margin-top: 0;
+}
+
+.entertainment .dj-social a:hover {
+  background: #00acee;
+}
+
+
+/* Mobile Responsive */
+
+@media (min-width: 576px) {
+  .entertain-containerr {
+    max-width: 540px;
+  }
+
+  .column2 {
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .entertain-container {
+    max-width: 720px;
+  }
+
+  .column2 {
+    max-width: 33.333333%;
+  }
+}
+
+@media (min-width: 992px) {
+  .entertain-container {
+    max-width: 960px;
+  }
+
+  .column2 {
+    max-width: 33%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .entertain-container {
+    max-width: 1140px;
+  }
+
+}
+
+/*--------------Entertainment Close--------------*/
+
+.cover-text{
+color: black; 
+font-family: "arial";
+font-size: 3em;
+margin: 10px 0 0 10px;
+white-space: nowrap;
+overflow: hidden;
+width: 100%;
+animation: animtext 4s steps(80, end); 
+transition: all cubic-bezier(0.1, 0.7, 1.0, 0.1);
+}
+.cover-text2{
+  color: black; 
+  font-family: "arial";
+  font-size: 1.5em;
+  margin: 10px 0 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  animation: animtext 4s steps(80, end); 
+  transition: all cubic-bezier(0.1, 0.7, 1.0, 0.1);
+  }
+@keyframes animtext { 
+from {
+   width: 0;
+  transition: all 2s ease-in-out;
+} 
 }
 </style>
 
