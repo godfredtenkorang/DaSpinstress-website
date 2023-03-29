@@ -6,4 +6,96 @@
         <h4 class="page-title pt-4">Book Me</h4>
     </div>
 </section>
+<div class="row">
+    <div class="col-md-12">
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 pt-4 pb-4">
+                <h2>Book {{ books.name }}</h2>
+                <p>Please fill ths form below and I'll sure do get back to you asap</p>
+                <form id="form" method="POST" class="pt-4">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" class="form-control form-control-lg mt-2" id="fullname" name="fullname">
+                       
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control form-control-lg mt-2" id="email" name="email">
+                    
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="Phone">Phone Number</label>
+                        <input type="number" class="form-control form-control-lg mt-2" id="phone" name="phone">
+                        
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="event">Event</label>
+                        <input type="text" class="form-control form-control-lg mt-2" id="event" name="event">
+                        
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="event_date">Event Date</label>
+                        <input type="text" class="form-control form-control-lg mt-2" id="event_date" name="event_date"
+                            placeholder="dd/mm/yyyy">
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="start_time">Start Time</label>
+                        <input type="text" class="form-control form-control-lg mt-2" id="start_time" name="start_time"
+                            placeholder="00:00">
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="end_time">End Time</label>
+                        <input type="text" class="form-control form-control-lg mt-2" id="end_time" name="end_time"
+                            placeholder="00:00">
+                        
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="location">Location</label>
+                        <input type="text" class="form-control form-control-lg mt-2" id="location" name="location">
+    
+                    </div>
+                    <div class="form-group mt-2">
+                        <textarea type="text" class="form-control mt-2" id="message" name="message" rows="4"
+                            placeholder="Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-outline-secondary mt-2">Submit
+                    </button>
+                </form>
+            </div>
+            <div class="col-md-6 pt-4 pb-4">
+                <h4>Other ways to reach me</h4>
+                <div>
+                    <img src="{% static 'akuaa/images/mail.png' %}" height="25px" alt="">
+                    <small style="font-size:1rem;">{{ books.address }}</small>
+                    <br>
+                    <br>
+                    <p>You have {{ books.name }} and you'll like to book me for a gig, I'd love to hear from you.
+                        Follow me on social media or simply use this contact form to send me an email.
+                    </p>
+                </div>
+                <div>
+                    <ul class="book-social">
+                        <li><a href="{{ books.twitter }}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ books.facebook }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ books.linkedin }}"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ books.instagram }}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ books.youtube }}"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                      </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

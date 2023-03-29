@@ -309,6 +309,22 @@
     background: #dd4b39;
   }
 
+  .youtube:hover {
+    color: #ff0000;
+  }
+
+  .youtube:hover span {
+    background: #3b5998;
+  }
+
+  .linkedin:hover {
+    color: #fff;
+  }
+
+  .linkedin:hover span {
+    background: #3b5998;
+  }
+
   .social li a .twitter {
     color: #1da1f2;
   }
@@ -344,7 +360,7 @@
   }
 
   .about-bg::before {
-    content: 'service';
+    content: '';
     display: block;
     position: absolute;
     top: 0;
@@ -364,7 +380,7 @@
   }
 
   .service-bg::before {
-    content: 'service';
+    content: '';
     display: block;
     position: absolute;
     top: 0;
@@ -384,7 +400,7 @@
   }
 
   .foundation-bg::before {
-    content: 'service';
+    content: '';
     display: block;
     position: absolute;
     top: 0;
@@ -404,7 +420,7 @@
   }
 
   .career-bg::before {
-    content: 'service';
+    content: '';
     display: block;
     position: absolute;
     top: 0;
@@ -424,7 +440,7 @@
   }
 
   .contact-bg::before {
-    content: 'contact';
+    content: '';
     display: block;
     position: absolute;
     top: 0;
@@ -1320,6 +1336,76 @@ from {
   transition: all 2s ease-in-out;
 } 
 }
+
+/*---------------book social start-------------*/
+
+.book-social {
+  position:relative;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, 0%);
+  margin:0;
+  padding:0;
+  display:flex;
+}
+
+.book-social li {
+  list-style: none;
+}
+
+.book-social li a {
+  position: relative;
+  width:60px;
+  height:60px;
+  display:block;
+  text-align:center;
+  margin:0 10px;
+  border-radius: 50%;
+  padding: 6px;
+  box-sizing: border-box;
+  text-decoration:none;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+  background: linear-gradient(0deg, #ddd, #fff);
+  transition: .5s;
+}
+
+.book-social li a:hover {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  text-decoration:none;
+}
+
+.book-social li a .fa {
+  width: 100%;
+  height:100%;
+  display:block;
+  background: linear-gradient(0deg, #fff, #ddd);
+  border-radius: 50%;
+  line-height: calc(60px - 12px);
+  font-size:24px;
+  color: #262626;
+  transition: .5s;
+}
+
+.book-social li:nth-child(1) a:hover .fa {
+  color: #3b5998;
+}
+
+.book-social li:nth-child(2) a:hover .fa {
+  color: #00aced;
+}
+
+.book-social li:nth-child(3) a:hover .fa {
+  color: #dd4b39;
+}
+
+.book-social li:nth-child(4) a:hover .fa {
+  color: #007bb6;
+}
+
+.book-social li:nth-child(5) a:hover .fa {
+  color: #e4405f;
+}
+/*----------------book social end-----------------*/
 </style>
 
 <body>
@@ -1431,7 +1517,7 @@ from {
 
           <ul class="social">
             <li class="social-links">
-              <a class="facebook" href="#">
+              <a class="facebook" href="https://www.facebook.com/DjAkuaaDaSpinstress/">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -1440,7 +1526,7 @@ from {
               </a>
             </li>
             <li>
-              <a class="twitter" href="#">
+              <a class="twitter" href="https://twitter.com/djakuaa">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -1449,7 +1535,7 @@ from {
               </a>
             </li>
             <li>
-              <a class="instagram" href="#">
+              <a class="instagram" href="https://instagram.com/djakuaa">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -1458,12 +1544,21 @@ from {
               </a>
             </li>
             <li>
-              <a class="google" href="#">
+              <a class="youtube" href="https://www.youtube.com/channel/UCIIqaSO3tuV5bE8rRVt3eTw">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                <i class="fa fa-google-plus" aria-hidden="true"></i>
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a class="linkedin" href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
               </a>
             </li>
           </ul>

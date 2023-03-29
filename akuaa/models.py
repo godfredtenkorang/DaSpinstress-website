@@ -61,3 +61,36 @@ class Contact(models.Model):
     
     def __str__(self):
         return self.name
+
+
+    
+class DJService(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='dj-img', default='')
+    position = models.CharField(max_length=100)
+    content1 = models.TextField()
+    address = models.CharField(max_length=100)
+    content2 = models.TextField()
+    twitter = models.URLField()
+    facebook = models.URLField()
+    linkedin = models.URLField()
+    instagram = models.URLField()
+    youtube = models.URLField()
+    
+    
+    def __str__(self):
+        return self.name
+    
+class Book(models.Model):
+    fullname = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone = models.CharField(max_length=15)
+    event = models.CharField(max_length=100)
+    event_date = models.CharField(max_length=10)
+    start_time = models.CharField(max_length=10)
+    end_time = models.CharField(max_length=10)
+    location = models.CharField(max_length=100)
+    message = models.TextField()
+    
+    def __str__(self):
+        return self.fullname

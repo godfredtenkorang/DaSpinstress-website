@@ -93,66 +93,29 @@
             <p style="font-family: 'Dancing Script', cursive;">For more entertainment, Book us</p>
         </div>
         <div class="row entertain-row">
-                <div class="column2">
-                    <div class="entertainment">
-                        <div class="dj-img">
-                            <img class="dj-image" src="{% static 'akuaa/images/dj-bg.jpeg' %}" alt="Team Image">
+            {% for djservice in djservices %}
+            <div class="column2">
+                <div class="entertainment">
+                    <div class="dj-img">
+                        <img class="dj-image" src="{{ djservice.image.url }}" alt="Team Image">
+                    </div>
+                    <div class="entertain-content">
+                        <h2 class="h2">{{ djservice.name }}</h2>
+                        <h3 class="h3">{{ djservice.position }}</h3>
+                        <p>{{ djservice.content1 }}</p>
+                        <div class="dj-social">
+                            <a href="{{ djservice.twitter }}" class="social-tw"> <i class="fa fa-twitter"></i></a>
+                            <a href="{{ djservice.facebook }}" class="social-fb"> <i class="fa fa-facebook-f"></i></a>
+                            <a href="{{ djservice.linkedin }}" class="social-li"> <i class="fa fa-linkedin"></i></a>
+                            <a href="{{ djservice.instagram }}" class="social-in"> <i class="fa fa-instagram"></i></a>
+                            <a href="{{ djservice.youtube }}" class="social-yt"> <i class="fa fa-youtube"></i></a>
                         </div>
-                        <div class="entertain-content">
-                            <h2 class="h2">Newman</h2>
-                            <h3 class="h3">Designer</h3>
-                            <p>Some text goes here that describes about team members</p>
-                            <div class="dj-social">
-                                <a href="#" class="social-tw"> <i class="fa fa-twitter"></i></a>
-                                <a href="#" class="social-fb"> <i class="fa fa-facebook-f"></i></a>
-                                <a href="#" class="social-li"> <i class="fa fa-linkedin"></i></a>
-                                <a href="#" class="social-in"> <i class="fa fa-instagram"></i></a>
-                                <a href="#" class="social-yt"> <i class="fa fa-youtube"></i></a>
-                            </div>
-                            <a class="btn btn-outline-secondary" href="{% url 'book' %}">Book</a>
-                        </div>
+                        <a class="btn btn-outline-secondary" href="{% url 'book' djservice.id %}">Book</a>
                     </div>
                 </div>
-                <div class="column2">
-                    <div class="entertainment">
-                        <div class="dj-img">
-                            <img class="dj-image" src="{% static 'akuaa/images/dj-bg.jpeg' %}" alt="Team Image">
-                        </div>
-                        <div class="entertain-content">
-                            <h2 class="h2">Newman</h2>
-                            <h3 class="h3">Designer</h3>
-                            <p>Some text goes here that describes about team members</p>
-                            <div class="dj-social">
-                                <a href="#" class="social-tw"> <i class="fa fa-twitter"></i></a>
-                                <a href="#" class="social-fb"> <i class="fa fa-facebook-f"></i></a>
-                                <a href="#" class="social-li"> <i class="fa fa-linkedin"></i></a>
-                                <a href="#" class="social-in"> <i class="fa fa-instagram"></i></a>
-                                <a href="#" class="social-yt"> <i class="fa fa-youtube"></i></a>
-                            </div>
-                            <a class="btn btn-outline-secondary" href="{% url 'book' %}">Book</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="column2">
-                    <div class="entertainment">
-                        <div class="dj-img">
-                            <img class="dj-image" src="{% static 'akuaa/images/dj-bg.jpeg' %}" alt="Team Image">
-                        </div>
-                        <div class="entertain-content">
-                            <h2 class="h2">Newman</h2>
-                            <h3 class="h3">Designer</h3>
-                            <p>Some text goes here that describes about team members</p>
-                            <div class="dj-social">
-                                <a href="#" class="social-tw"> <i class="fa fa-twitter"></i></a>
-                                <a href="#" class="social-fb"> <i class="fa fa-facebook-f"></i></a>
-                                <a href="#" class="social-li"> <i class="fa fa-linkedin"></i></a>
-                                <a href="#" class="social-in"> <i class="fa fa-instagram"></i></a>
-                                <a href="#" class="social-yt"> <i class="fa fa-youtube"></i></a>
-                            </div>
-                            <a class="btn btn-outline-secondary" href="{% url 'book' %}">Book</a>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            {% endfor %}
+            
         </div>
     </div>
 </section>

@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 from django.utils.datastructures import MultiValueDictKeyError
+from django.contrib import messages
 
 # Create your views here.
 def home(request):
@@ -21,8 +22,10 @@ def about(request):
     return render(request, 'akuaa/about.html', context)
 
 def service(request):
+    djservices = DJService.objects.all()
     context = {
         'title': 'Services',
+        'djservices':djservices
     }
     return render(request, 'akuaa/service.html', context)
 
@@ -52,7 +55,8 @@ def career(request):
             cover_letter = False
         career = Career(name=fullname, email=email, phone=phone, position=position, location=location, linkedin=linkedin, portfolio=portfolio, choice1=choice1, choice2=choice2, resume=resume, cover_letter=cover_letter)
         career.save()
-    
+        messages.success(request, "Your forms has been submitted, you will here from us very soon")
+        return redirect('career')
         
     context = {
         'title': 'Career',
@@ -68,11 +72,30 @@ def contact(request):
         message = request.POST['message']
         contact = Contact(name=name, email=email, phone=phone, message=message)
         contact.save()
+        messages.success(request, "Your forms has been submitted, you will here from us very soon")
         return render(request, 'akuaa/contact.html')
     context = {
         'title': 'Contact',
     }
     return render(request, 'akuaa/contact.html', context)
 
-def book(request):
-    return render(request, 'akuaa/book.html')
+
+def book(request, book):
+    books = DJService.objects.get(pk=book)
+    if request.method == 'POST':
+        fullname = request.POST['fullname']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        event = request.POST['event']
+        event_date = request.POST['event_date']
+        start_time = request.POST['start_time']
+        end_time = request.POST['end_time']
+        location = request.POST['location']
+        message = request.POST['message']
+        booking = Book(fullname=fullname, email=email, phone=phone, event=event, event_date=event_date, start_time=start_time, end_time=end_time, location=location, message=message)
+        booking.save()
+        messages.success(request, "Your booking form has been submitted, you will hear from us very soom!")
+    context = {
+        'books':books,
+    }
+    return render(request, 'akuaa/book.html', context)
