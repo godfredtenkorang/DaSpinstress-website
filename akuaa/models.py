@@ -27,12 +27,10 @@ CHOICES = (
     ("No", "No"),
 )
 
-class LatestNews(models.Model):
+class HomeClient(models.Model):
     title = models.CharField(max_length=100)
-    content = models.TextField()
-    image = models.ImageField(upload_to="LatestNews-img")
+    image = models.ImageField(upload_to="HomeClient-img")
     date = models.DateTimeField(default=timezone.now)
-    link = models.URLField()
     
     def __str__(self):
         return self.title
@@ -62,15 +60,12 @@ class Contact(models.Model):
     def __str__(self):
         return self.name
 
-
-    
-class DJService(models.Model):
+class Client(models.Model):
     name = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='dj-img', default='')
+    image = models.ImageField(upload_to='client-img', default='')
     position = models.CharField(max_length=100)
-    content1 = models.TextField()
+    content = models.TextField()
     address = models.CharField(max_length=100)
-    content2 = models.TextField()
     twitter = models.URLField()
     facebook = models.URLField()
     linkedin = models.URLField()

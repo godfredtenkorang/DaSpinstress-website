@@ -1,0 +1,38 @@
+{% extends 'akuaa/base.html' %}
+{% load static %}
+{% block css_files %}
+    <link rel="stylesheet" type="text/css" href="{% static 'akuaa/styles.css' %}">
+{% endblock %}
+{% block content %}
+<section class="title-bg">
+    <div class="contact pt-5">
+        <h4 class="page-title pt-4">Clients</h4>
+    </div>
+</section>
+<section class="pt-4 pb-4">
+    <div class="container">
+        <div class="row">
+            {% for client in clients %}
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card entertainment" style="height: 100%;">
+                    <img src="{{ client.image.url }}" height="300px" width="100%" alt="">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ client.name }}</h3>
+                        <p class="card-text">{{ client.position }}</p>
+                        <p class="card-content">{{ client.content }}</p>
+                        <a class="btn btn-outline-secondary" href="{% url 'book' client.id %}">Book</a>
+                    </div>
+                    <div class="card-footer dj-social text-center">
+                            <a href="{{ client.twitter }}" class="social-tw"> <i class="fa fa-twitter"></i></a>
+                            <a href="{{ client.facebook }}" class="social-fb"> <i class="fa fa-facebook-f"></i></a>
+                            <a href="{{ client.linkedin }}" class="social-li"> <i class="fa fa-linkedin"></i></a>
+                            <a href="{{ djservice.instagram }}" class="social-in"> <i class="fa fa-instagram"></i></a>
+                            <a href="{{ client.youtube }}" class="social-yt"> <i class="fa fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -4,6 +4,6 @@ from .models import *
 admin.site.register(Contact)
 admin.site.register(Career)
 admin.site.register(Blog)
-admin.site.register(LatestNews)
+admin.site.register(HomeClient)
 admin.site.register(Book)
-admin.site.register(DJService)
+admin.site.register(Client)

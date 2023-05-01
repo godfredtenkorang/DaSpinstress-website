@@ -6,11 +6,11 @@ from django.contrib import messages
 # Create your views here.
 def home(request):
     blogs = Blog.objects.order_by('-date_posted')
-    news = LatestNews.objects.order_by('-date')
+    clients = HomeClient.objects.order_by('-date')
     
     context = {
         'blogs':blogs,
-        'news':news
+        'clients':clients
     }
     return render(request, 'akuaa/home.html', context)
 
@@ -22,12 +22,18 @@ def about(request):
     return render(request, 'akuaa/about.html', context)
 
 def service(request):
-    djservices = DJService.objects.all()
     context = {
         'title': 'Services',
-        'djservices':djservices
     }
     return render(request, 'akuaa/service.html', context)
+
+def client(request):
+    clients = Client.objects.all()
+    context = {
+        'title': 'Clients',
+        'clients': clients
+    }
+    return render(request, 'akuaa/clients.html', context)
 
 def foundation(request):
     context = {
@@ -81,7 +87,7 @@ def contact(request):
 
 
 def book(request, book):
-    books = DJService.objects.get(pk=book)
+    books = Client.objects.get(pk=book)
     if request.method == 'POST':
         fullname = request.POST['fullname']
         email = request.POST['email']
@@ -94,7 +100,7 @@ def book(request, book):
         message = request.POST['message']
         booking = Book(fullname=fullname, email=email, phone=phone, event=event, event_date=event_date, start_time=start_time, end_time=end_time, location=location, message=message)
         booking.save()
-        messages.success(request, "Your booking form has been submitted, you will hear from us very soom!")
+        messages.success(request, "Your booking form has been submitted, you will hear from us very soon!")
     context = {
         'books':books,
     }

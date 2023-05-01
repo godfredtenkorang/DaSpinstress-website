@@ -1,7 +1,10 @@
 {% extends 'akuaa/base.html' %}
 {% load static %}
 {% block content %}
-<section class="service-bg">
+{% block css_files %}
+    <link rel="stylesheet" type="text/css" href="{% static 'akuaa/styles.css' %}">
+{% endblock %}
+<section class="title-bg">
     <div class="contact pt-5">
         <h4 class="page-title pt-4">Services</h4>
     </div>
@@ -9,7 +12,7 @@
 <section class="pt-4">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 pb-3 d-flex justify-content-center">
+            <div class="col-lg-4 col-md-6 col-sm-12 pb-3 d-flex justify-content-center">
                 <div class="card">
                     <img src="{% static 'akuaa/images/talent-img.JPG' %}" height="200px" alt="">
                     <div class="card-body">
@@ -20,7 +23,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 pb-3 d-flex justify-content-center">
+            <div class="col-lg-4 col-md-6 col-sm-12 pb-3 d-flex justify-content-center">
                 <div class="card">
                     <img src="{% static 'akuaa/images/media-img.JPG' %}" height="200px" alt="">
                     <div class="card-body">
@@ -31,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 pb-3 d-flex justify-content-center">
+            <div class="col-lg-4 col-md-6 col-sm-12 pb-3 d-flex justify-content-center">
                 <div class="card">
                     <img src="{% static 'akuaa/images/event-img.JPG' %}" height="200px" alt="">
                     <div class="card-body">
@@ -41,7 +44,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 pb-3 d-flex justify-content-center">
+            <div class="col-lg-4 col-md-6 col-sm-12 pb-3 d-flex justify-content-center">
                 <div class="card">
                     <img src="{% static 'akuaa/images/digital-img.JPG' %}" height="200px" alt="">
                     <div class="card-body">
@@ -54,7 +57,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 pb-3 d-flex justify-content-center">
+            <div class="col-lg-4 col-md-6 col-sm-12 pb-3 d-flex justify-content-center">
                 <div class="card">
                     <img src="{% static 'akuaa/images/PR-img.PNG' %}" height="200px" alt="">
                     <div class="card-body">
@@ -67,7 +70,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4 pb-3 d-flex justify-content-center">
+            <div class="col-lg-4 col-md-6 col-sm-12 pb-3 d-flex justify-content-center">
                 <div class="card">
                     <img src="{% static 'akuaa/images/influencer-img.JPG' %}" height="200px" alt="">
                     <div class="card-body">
@@ -81,41 +84,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<section class="pt-4" style="background-color:#EEE;">
-    <div class="container entertain-container">
-        <div class="section-title">
-            <h1 class="h1">Entertainment</h1>
-            <br>
-            <br>
-            <p style="font-family: 'Dancing Script', cursive;">For more entertainment, Book us</p>
-        </div>
-        <div class="row entertain-row">
-            {% for djservice in djservices %}
-            <div class="column2">
-                <div class="entertainment">
-                    <div class="dj-img">
-                        <img class="dj-image" src="{{ djservice.image.url }}" alt="Team Image">
-                    </div>
-                    <div class="entertain-content">
-                        <h2 class="h2">{{ djservice.name }}</h2>
-                        <h3 class="h3">{{ djservice.position }}</h3>
-                        <p>{{ djservice.content1 }}</p>
-                        <div class="dj-social">
-                            <a href="{{ djservice.twitter }}" class="social-tw"> <i class="fa fa-twitter"></i></a>
-                            <a href="{{ djservice.facebook }}" class="social-fb"> <i class="fa fa-facebook-f"></i></a>
-                            <a href="{{ djservice.linkedin }}" class="social-li"> <i class="fa fa-linkedin"></i></a>
-                            <a href="{{ djservice.instagram }}" class="social-in"> <i class="fa fa-instagram"></i></a>
-                            <a href="{{ djservice.youtube }}" class="social-yt"> <i class="fa fa-youtube"></i></a>
-                        </div>
-                        <a class="btn btn-outline-secondary" href="{% url 'book' djservice.id %}">Book</a>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-            
         </div>
     </div>
 </section>

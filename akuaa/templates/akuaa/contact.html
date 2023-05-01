@@ -1,76 +1,93 @@
 {% extends 'akuaa/base.html' %}
 {% load static %}
+{% block css_files %}
+    <link rel="stylesheet" type="text/css" href="{% static 'akuaa/styles.css' %}">
+{% endblock %}
 {% block content %}
-<section class="contact-bg">
-    <div class="contact pt-5">
-        <h4 class="page-title pt-4">Contact Us</h4>
-    </div>
+<section class="title-bg">
+  <div class="contact pt-5">
+    <h4 class="page-title pt-4">Contact Us</h4>
+  </div>
 </section>
 <div class="row">
-    <div class="col-md-12">
-      {% if messages %}
-        {% for message in messages %}
-          <div class="alert alert-{{ message.tags }}">
-            {{ message }}
+  <div class="col-md-12">
+    {% if messages %}
+     {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+     {% endif %}
+  </div>
+</div>
+<section class="contact-form pt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 pb-3">
+        <h3 style="font-family: 'Merriweather', serif">Contact Us</h3>
+        <div class="pt-3">
+          <img src="{% static 'akuaa/images/location.png' %}" height="25px" width="35px" alt="" />
+          <span style="font-weight: bold">Address:</span><span> 10 Marsh lane, Elkton, Maryland, 21921, United
+            States</span>
+        </div>
+        <div class="mt-5">
+          <img src="{% static 'akuaa/images/mail.png' %}" height="25px" width="35px" alt="" />
+          <span style="font-weight: bold">Email:</span><span> info@daspinstressllc.com</span>
+        </div>
+        <div class="mt-5">
+          <img src="{% static 'akuaa/images/phone.png' %}" height="25px" width="35px" alt="" />
+          <span style="font-weight: bold">Phone:</span><span> +1 (443) 655-3808</span>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <h3 style="font-family: 'Merriweather', serif">Get in touch</h3>
+        <form method="POST" class="pt-2">
+          {% csrf_token %}
+          <div class="form-group">
+            <input type="text" class="form-control mt-2" id="name" name="name" placeholder="Name" />
           </div>
-        {% endfor %}
-      {% endif %}
+          <div class="form-group mt-2">
+            <input type="email" class="form-control mt-2" id="email" name="email" placeholder="Email" />
+          </div>
+          <div class="form-group mt-2">
+            <input type="number" class="form-control mt-2" id="phone" name="phone" placeholder="Phone Number" />
+          </div>
+          <div class="form-group mt-2">
+            <textarea type="text" class="form-control mt-2" id="message" name="message" rows="4"
+              placeholder="Message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-outline-secondary mt-2 mb-4">
+            Send Message
+          </button>
+        </form>
+      </div>
     </div>
   </div>
-<section class="contact-form pt-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 pb-3">
-                <h3 style="font-family: 'Merriweather', serif;">Contact Us</h3>
-                <div class="pt-3">
-                    <img src="{% static 'akuaa/images/location.png' %}" height="25px" width="35px" alt="">
-                    <span style="font-weight: bold;">Address:</span><span> 10 Marsh lane, Elkton, Maryland, 21921, United States</span>
-                </div>
-                <div class="mt-5">
-                    <img src="{% static 'akuaa/images/mail.png' %}" height="25px" width="35px" alt="">
-                    <span style="font-weight: bold;">Email:</span><span> info@daspinstressllc.com</span>
-                </div>
-                <div class="mt-5">
-                    <img src="{% static 'akuaa/images/phone.png' %}" height="25px" width="35px" alt="">
-                    <span style="font-weight: bold;">Phone:</span><span> +1 (443) 655-3808</span>
-                </div>
-                <div class="mt-5">
-                    <img src="{% static 'akuaa/images/website.png' %}" height="25px" width="35px" alt="">
-                    <span style="font-weight: bold;">Website:</span><span> https://djakuaa.com/</span>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <h3 style="font-family: 'Merriweather', serif;">Get in touch</h3>
-                <form method="POST" class="pt-2">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <input type="text" class="form-control mt-2" id="name" name="name" placeholder="Name">
-                    </div>
-                    <div class="form-group mt-2">
-
-                        <input type="email" class="form-control mt-2" id="email" name="email" placeholder="Email">
-                    </div>
-                    <div class="form-group mt-2">
-
-                        <input type="number" class="form-control mt-2" id="phone" name="phone"
-                            placeholder="Phone Number">
-                    </div>
-                    <div class="form-group mt-2">
-                        <textarea type="text" class="form-control mt-2" id="message" name="message" rows="4"
-                            placeholder="Message"></textarea>
-                    </div>
-                    <button type="submit"
-                        class="btn btn-outline-secondary mt-2 mb-4">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </div>
-    
 </section>
 <section class="location pt-1">
-    <div class="container">
-     <div class="mapouter"><div class="gmap_canvas"><iframe width="1080" height="503" id="gmap_canvas" src="https://maps.google.com/maps?q=10%20Marsh%20lane,%20Elkton,%20Maryland,%2021921,%20United%20States&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-i.net">descendants 3 123movies</a><br><style>.mapouter{position:relative;text-align:right;height:503px;width:1080px;}</style><a href="https://www.embedgooglemap.net"></a><style>.gmap_canvas {overflow:hidden;background:none!important;height:503px;width:1080px;}</style></div></div>
+  <div class="container">
+    <div class="mapouter">
+      <div class="gmap_canvas">
+        <iframe width="1080" height="503" id="gmap_canvas"
+          src="https://maps.google.com/maps?q=10%20Marsh%20lane,%20Elkton,%20Maryland,%2021921,%20United%20States&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+          href="https://123movies-i.net">descendants 3 123movies</a><br />
+        <style>
+          .mapouter {
+            position: relative;
+            text-align: right;
+            height: 503px;
+            width: 1080px;
+          }
+        </style><a href="https://www.embedgooglemap.net"></a>
+        <style>
+          .gmap_canvas {
+            overflow: hidden;
+            background: none !important;
+            height: 503px;
+            width: 1080px;
+          }
+        </style>
+      </div>
     </div>
- 
- </section>
+  </div>
+</section>
 {% endblock %}

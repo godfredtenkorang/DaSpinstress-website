@@ -12,7 +12,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="{% static 'akuaa/styles.css' %}">
+  {% block css_files %}
+  {% endblock %}
   {% if title %}
   <title>DaSpinstress - {{ title }}</title>
   {% else %}
@@ -352,94 +353,14 @@
 
   }
 
-  .about-bg {
-    background-image: url("{% static 'akuaa/images/testimonial2.jpg' %}");
+  .title-bg {
+    background-image: url("{% static 'akuaa/images/all-bg.jpg' %}");
     background-repeat: no-repeat;
     background-size: cover;
     height: 25vh;
   }
 
-  .about-bg::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #000;
-    opacity: 0.5;
-    height: 25vh;
-  }
-
-  .service-bg {
-    background-image: url("{% static 'akuaa/images/testimonial-bg.jpg' %}");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 25vh;
-  }
-
-  .service-bg::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #000;
-    opacity: 0.5;
-    height: 25vh;
-  }
-
-  .foundation-bg {
-    background-image: url("{% static 'akuaa/images/entertainment.jpeg' %}");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 25vh;
-  }
-
-  .foundation-bg::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #000;
-    opacity: 0.5;
-    height: 25vh;
-  }
-
-  .career-bg {
-    background-image: url("{% static 'akuaa/images/testimonial-bg.jpg' %}");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 25vh;
-  }
-
-  .career-bg::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #000;
-    opacity: 0.5;
-    height: 25vh;
-  }
-
-  .contact-bg {
-    background-image: url("{% static 'akuaa/images/dj-bg.jpeg' %}");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 25vh;
-  }
-
-  .contact-bg::before {
+  .title-bg::before {
     content: '';
     display: block;
     position: absolute;
@@ -719,88 +640,7 @@
     height: 35px;
   }
 
-  /* ------testimonial  close-------*/
-
-  /* -------------skills ------------ */
-  .detail {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
-
-  .bar {
-    position: relative;
-    border: 2px solid #2F58CD;
-    border-radius: 20px;
-  }
-
-  .bar div {
-    position: relative;
-    width: 0;
-    height: 9px;
-    border-radius: 10px;
-    background-color: #2F58CD;
-  }
-
-  .skills:not(:last-child) {
-    margin-bottom: 30px;
-  }
-
-  #python-bar {
-    animation: python-fill 2s forwards;
-  }
-
-  @keyframes python-fill {
-    100% {
-      width: 95%;
-    }
-  }
-
-  #html-bar {
-    animation: html-fill 2s forwards;
-  }
-
-  @keyframes html-fill {
-    100% {
-      width: 94%;
-    }
-  }
-
-  #css-bar {
-    animation: css-fill 2s forwards;
-  }
-
-  @keyframes css-fill {
-    100% {
-      width: 89%;
-    }
-  }
-
-  #javascript-bar {
-    animation: javascript-fill 2s forwards;
-  }
-
-  @keyframes javascript-fill {
-    100% {
-      width: 80%;
-    }
-  }
-
-  .display-7 {
-    font-size: 16px;
-    font-weight: 500;
-    position: relative;
-  }
-
-  .display-8 {
-    font-size: 16px;
-    font-weight: 500;
-    position: relative;
-    float: right;
-  }
-
-  /* ------------skills close------------ */
+  /* ------testimonial  close-------*
 
   /* -------Team Template start-------- */
 
@@ -1094,7 +934,7 @@
 }
 /*--------------Entertainment Section------------*/
 
-
+/*
 
 .team-para {
   padding: 0;
@@ -1268,7 +1108,7 @@
 
 
 /* Mobile Responsive */
-
+/*
 @media (min-width: 576px) {
   .entertain-containerr {
     max-width: 540px;
@@ -1304,7 +1144,7 @@
     max-width: 1140px;
   }
 
-}
+} */
 
 /*--------------Entertainment Close--------------*/
 
@@ -1355,8 +1195,8 @@ from {
 
 .book-social li a {
   position: relative;
-  width:60px;
-  height:60px;
+  width:50px;
+  height:50px;
   display:block;
   text-align:center;
   margin:0 10px;
@@ -1406,6 +1246,54 @@ from {
   color: #e4405f;
 }
 /*----------------book social end-----------------*/
+
+.entertainment .dj-social {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.entertainment .dj-social a {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.entertainment .dj-social a.social-tw {
+  background: #00acee;
+}
+
+.entertainment .dj-social a.social-fb {
+  background: #3b5998;
+}
+
+.entertainment .dj-social a.social-li {
+  background: #0e76a8;
+}
+
+.entertainment .dj-social a.social-in {
+  background: #3f729b;
+}
+
+.entertainment .dj-social a.social-yt {
+  background: #c4302b;
+}
+
+.entertainment .dj-social a:last-child {
+  margin-right: 0;
+}
+
+.entertainment:hover .dj-social a {
+  margin-top: 0;
+}
+.entertainment .dj-social a:hover {
+  background: #00acee;
+}
+
 </style>
 
 <body>
@@ -1433,13 +1321,16 @@ from {
             <a class="nav-link" href="{% url 'service' %}">Services</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{% url 'client' %}">Clients</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'foundation' %}">Foundation</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'career' %}">Careers</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
           </li>
         </ul>
       </div>
@@ -1459,12 +1350,6 @@ from {
               </li>
               <li class="footer-list">
                 <a class="footer-links" href="">About Us</a>
-              </li>
-              <li class="footer-list">
-                <a class="footer-links" href="">Agency</a>
-              </li>
-              <li class="footer-list">
-                <a class="footer-links" href="">Talent</a>
               </li>
               <li class="footer-list">
                 <a class="footer-links" href="">Foundation</a>

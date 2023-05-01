@@ -1,7 +1,10 @@
 {% extends 'akuaa/base.html' %}
 {% load static %}
+{% block css_files %}
+    <link rel="stylesheet" type="text/css" href="{% static 'akuaa/styles.css' %}">
+{% endblock %}
 {% block content %}
-<section class="about-bg">
+<section class="title-bg">
     <div class="contact pt-5">
         <h4 class="page-title pt-4">About</h4>
     </div>
@@ -9,10 +12,10 @@
 <section class="pt-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                <img class="d-none d-md-block" src="{% static 'akuaa/images/dj-bg.jpeg' %}" height="250px" alt="">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <img class="d-none d-md-block" src="{% static 'akuaa/images/dj-bg.jpeg' %}" height="250px" width="100%" alt="">
             </div>
-            <div class="col-md-6">
+            <div class="col-lg-6 col-md-6 col-sm-12">
                 <h2 style="font-family: 'Merriweather', serif;">About</h2>
                 <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium cupiditate architecto velit
                     quasi ea doloribus. Totam, nobis blanditiis. Magnam dolor necessitatibus assumenda doloribus aliquid
@@ -24,14 +27,14 @@
 <section class="pt-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-lg-6 col-md-6 col-sm-12">
                 <h2 style="font-family: 'Merriweather', serif;">Mission</h2>
                 <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium cupiditate architecto velit
                     quasi ea doloribus. Totam, nobis blanditiis. Magnam dolor necessitatibus assumenda doloribus aliquid
                     laborum, quisquam vitae consequatur ut qui.</h4>
             </div>
-            <div class="col-md-6">
-                <img class="d-none d-md-block" src="{% static 'akuaa/images/dj-bg.jpeg' %}" height="250px" alt="">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <img class="d-none d-md-block" src="{% static 'akuaa/images/dj-bg.jpeg' %}" height="250px" width="100%" alt="">
             </div>
         </div>
     </div>
@@ -39,10 +42,10 @@
 <section class="pt-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                <img class="d-none d-md-block" src="{% static 'akuaa/images/dj-bg.jpeg' %}" height="250px" alt="">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <img class="d-none d-md-block" src="{% static 'akuaa/images/dj-bg.jpeg' %}" height="250px" width="100%" alt="">
             </div>
-            <div class="col-md-6">
+            <div class="col-lg-6 col-md-6 col-sm-12">
                 <h2 style="font-family: 'Merriweather', serif;">Vision</h2>
                 <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium cupiditate architecto velit
                     quasi ea doloribus. Totam, nobis blanditiis. Magnam dolor necessitatibus assumenda doloribus aliquid
@@ -51,51 +54,7 @@
         </div>
     </div>
 </section>
-<section class="pt-5 pb-4">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="skills">
-                    <h4 style="font-family: 'Merriweather', serif;">My Skills</h4>
-                    <div class="detail">
-                        <span class="display7">Djing</span>
-                        <span class="display-8">95%</span>
-                    </div>
-                    <div class="bar">
-                        <div id="python-bar"></div>
-                    </div>
-                    <div class="detail mt-2">
-                        <span class="display7">Marketing</span>
-                        <span class="display-8">94%</span>
-                    </div>
-                    <div class="bar">
-                        <div id="html-bar"></div>
-                    </div>
-                    <div class="detail mt-2">
-                        <span class="display7">Advertising</span>
-                        <span class="display-8">89%</span>
-                    </div>
-                    <div class="bar">
-                        <div id="css-bar"></div>
-                    </div>
-                    <div class="detail mt-2">
-                        <span class="display7">Influencer</span>
-                        <span class="display-8">80%</span>
-                    </div>
-                    <div class="bar">
-                        <div id="javascript-bar"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="col-md-6">
-                    <img class="d-none d-md-block" src="{% static 'akuaa/images/dj-bg.jpeg' %}" height="250px" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section>
+<section class="pt-4">
     <div class="container">
         <div class="section-title">
             <h1 class="h1">Meet The Team</h1>

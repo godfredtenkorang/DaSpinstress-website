@@ -1,13 +1,16 @@
 {% extends 'akuaa/base.html' %}
 {% load static %}
 {% block content %}
+{% block css_files %}
+    <link rel="stylesheet" type="text/css" href="{% static 'akuaa/styles.css' %}">
+{% endblock %}
 <section class="home-bg">
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="welcome">
                 <div class="welcome-img text-center">
-                   <h3 class="cover-text" style="font-size: 50px; color:#fff; font-family:Merrimeter">DaSpinstress LLC</h3>
+                   <h3 class="cover-text" style="font-size: 45px; color:#fff; font-family:Merrimeter">DaSpinstress LLC</h3>
                 </div>
                 <h5 style="color:#fff;" class="cover-text2 text-center welcome-text-2">... In Touch, Top in Mind</h5>
                 <!-- <div class="text-center">
@@ -65,15 +68,66 @@
         </div>
     </div>
 </section> -->
+<section class="pt-4">
+    <div class="section-title">
+        <h1>Services</h1>
+        <br>
+        <br>
+        <p style="font-family: 'Dancing Script', cursive;">These are our services</p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-12 pt-3">
+                <div class="text-center">
+                    <img src="{% static 'akuaa/images/talent.png' %}" height="60px" alt="">
+                    <h2>Talent Management</h2>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12 pt-3">
+                <div class="text-center">
+                    <img src="{% static 'akuaa/images/media.png' %}" height="60px" alt="">
+                    <h2>Media Production</h2>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12 pt-3">
+                <div class="text-center">
+                    <img src="{% static 'akuaa/images/event.png' %}" height="60px" alt="">
+                    <h2>Event Management</h2>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12 pt-5">
+                <div class="text-center">
+                    <img src="{% static 'akuaa/images/digital.png' %}" height="60px" alt="">
+                    <h2>Digital Marketing Services</h2>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12 pt-5">
+                <div class="text-center">
+                    <img src="{% static 'akuaa/images/pr.png' %}" height="60px" alt="">
+                    <h2>PR & Media Services</h2>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12 pt-5">
+                <div class="text-center">
+                    <img src="{% static 'akuaa/images/influencer.png' %}" height="60px" alt="">
+                    <h2>Influencer Management</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <section class="next-sec mb-3 pt-3">
     <div class="section-title">
         <h1>Blog</h1>
+        <br>
+        <br>
+        <p style="font-family: 'Dancing Script', cursive;">Our recent blog</p>
     </div>
     <div class="container">
         <div class="row">
             {% for blog in blogs %}
-            <div class="col-md-4 d-flex justify-content-center">
-                <div class="card mb-3" style="width: 20rem;">
+            <div class="col-lg-4 col-md-4 col-sm-12 d-flex justify-content-center">
+                <div class="card mb-3" style="width: 100%;">
                     <img src="{{ blog.image.url }}" height="300px" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h4 class="card-title">{{ blog.title }}</h4>
@@ -87,61 +141,21 @@
         </div>
     </div>
 </section>
-
-<section class="counter-bg pt-4">
-    <div class="container">
-        <div class="row counter-row">
-            <div class="col-lg-12 counter-img">
-                <div class="column">
-                    <div class="card-img">
-                        <img src="{% static 'akuaa/images/followers.png' %}" height="50px" alt="icon">
-                        <h3 class="pt-3">21.1K</h3>
-                        <p style="font-size: 20px; font-weight:bold;">Followers</p>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="card-img">
-                        <img src="{% static 'akuaa/images/award.png' %}" height="50px" alt="icon">
-                        <h3 class="pt-3">50+</h3>
-                        <p style="font-size: 20px; font-weight:bold;">Awards</p>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="card-img">
-                        <img src="{% static 'akuaa/images/client.png' %}" height="50px" alt="icon">
-                        <h3 class="pt-3">100+</h3>
-                        <p style="font-size: 20px; font-weight:bold;">Business Clients</p>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="card-img">
-                        <img src="{% static 'akuaa/images/track.png' %}" height="50px" alt="icon">
-                        <h3 class="pt-3">30+</h3>
-                        <p style="font-size: 20px; font-weight:bold;">Track Record</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 <section class="latest-news pt-3">
     <div class="section-title">
-        <h1>Latest News</h1>
+        <h1>CLIENTS WE WORK WITH</h1>
         <br>
         <br>
-        <p style="font-family: 'Dancing Script', cursive;">Latest news from us</p>
+        <p style="font-family: 'Dancing Script', cursive;">Wants to know our clients...</p>
     </div>
     <div class="container">
         <div class="row">
-            {% for new in news %}
-            <div class="col-md-4 d-flex justify-content-center">
-                <div class="card mb-3" style="width: 20rem;">
-                    <img src="{{ new.image.url }}" height="300px" class="card-img-top" alt="...">
+            {% for client in clients %}
+            <div class="col-lg-4 col-md-4 col-sm-12 d-flex justify-content-center">
+                <div class="card mb-3" style="width: 100%;">
+                    <img src="{{ client.image.url }}" height="250px" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h4 class="card-title">{{ new.title }}</h4>
-                        <p class="card-text">{{ new.content }}</p>
-                        <a class="links" href="{{ new.link }}">Read More</a>
-                        <small>{{ new.date|date:"F d, Y" }}</small>
+                        <h4 class="card-title">{{ client.title }}</h4>
                     </div>
                 </div>
             </div>

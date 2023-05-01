@@ -1,7 +1,10 @@
 {% extends 'akuaa/base.html' %}
 {% load static %}
+{% block css_files %}
+    <link rel="stylesheet" type="text/css" href="{% static 'akuaa/styles.css' %}">
+{% endblock %}
 {% block content %}
-<section class="foundation-bg">
+<section class="title-bg">
     <div class="contact pt-5">
         <h4 class="page-title pt-4">Foundation</h4>
     </div>
