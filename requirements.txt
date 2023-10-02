@@ -1,5 +1,5 @@
 arabic-reshaper==2.1.4
-asgiref==3.5.2
+# asgiref==3.5.2
 asn1crypto==1.5.1
 autopep8==1.7.0
 Brotli==1.0.9
