@@ -122,27 +122,6 @@
     background-color: #2F58CD;
   }
 
-  /* 
-    .carousel-item {
-      background: no-repeat scroll center scroll;
-      -webkit-background-size: cover;
-      background-size: cover;
-    }
-    
-    .carousel-item::before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      background: #000;
-      opacity: 0.5;
-    }
-    */
-
-
   .location {
     overflow: hidden;
     padding-bottom: 20px;
@@ -158,7 +137,7 @@
   .footer-title {
     position: relative;
     color: #2F58CD;
-    font-size: 23px;
+    font-size: 20px;
   }
 
   .footer-list {
@@ -358,6 +337,7 @@
     background-image: url("{% static 'akuaa/images/all-bg.jpg' %}");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     height: 25vh;
   }
 
@@ -933,221 +913,6 @@
   text-decoration: none;
   color: #2F58CD;
 }
-/*--------------Entertainment Section------------*/
-
-/*
-
-.team-para {
-  padding: 0;
-  margin: 0 0 15px 0;
-  color: #454545;
-  font-weight: 300;
-}
-
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  padding: 0;
-  margin: 0 0 15px 0;
-  color: #333333;
-  font-weight: 700;
-}
-
-.dj-img {
-  width: 100%;
-  height: auto;
-}
-
-.section-title {
-  flex: 0 0 100%;
-  max-width: 100%;
-  margin-bottom: 30px;
-  margin-top: 20px;
-  text-align: center;
-}
-
-.section-title h1 {
-  display: inline-block;
-  font-size: 35px;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #000000;
-  margin: 0 0 5px;
-  position: relative;
-}
-
-.section-title h1::before {
-  content: '';
-  left: 0;
-  position: absolute;
-  height: 3px;
-  right: 32%;
-  background-color: #2F58CD;
-  bottom: -5px;
-}
-
-.section-title h1::before {
-  left: 30%;
-}
-
-.entertain-row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
-}
-
-.column2 {
-  position: relative;
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-
-.entertainment {
-  margin-bottom: 30px;
-}
-
-.entertainment .dj-img {
-  position: relative;
-  font-size: 0;
-  text-align: center;
-}
-
-.entertainment .dj-img img {
-  width: 160px;
-  height: 160px;
-  border-radius: 100%;
-  border: 20px solid #f3f4fa;
-}
-
-.entertainment .entertain-content {
-  padding: 80px 20px 20px 20px;
-  margin-top: -80px;
-  text-align: center;
-  background: #f3f4fa;
-  border-radius: 10px;
-}
-
-.entertainment .entertain-content h2 {
-  font-size: 25px;
-  font-weight: 400;
-  letter-spacing: 2px;
-}
-
-.entertainment .entertain-content h3 {
-  font-size: 16px;
-  font-weight: 300;
-}
-
-.entertainment .entertain-content h4 {
-  font-size: 16px;
-  font-weight: 300;
-  letter-spacing: 1px;
-  font-style: italic;
-  margin-bottom: 0;
-}
-
-.entertainment .entertain-content p {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 22px;
-}
-
-.entertainment .dj-social {
-  position: relative;
-  align-items: center;
-  justify-content: center;
-}
-
-.entertainment .dj-social a {
-  display: inline-block;
-  height: 30px;
-  width: 30px;
-  font-size: 20px;
-  text-align: center;
-  border-radius: 10px;
-  color: #ffffff;
-}
-
-.entertainment .dj-social a.social-tw {
-  background: #00acee;
-}
-
-.entertainment .dj-social a.social-fb {
-  background: #3b5998;
-}
-
-.entertainment .dj-social a.social-li {
-  background: #0e76a8;
-}
-
-.entertainment .dj-social a.social-in {
-  background: #3f729b;
-}
-
-.entertainment .dj-social a.social-yt {
-  background: #c4302b;
-}
-
-.entertainment .dj-social a:last-child {
-  margin-right: 0;
-}
-
-.entertainment:hover .dj-social a {
-  margin-top: 0;
-}
-
-.entertainment .dj-social a:hover {
-  background: #00acee;
-}
-
-
-/* Mobile Responsive */
-/*
-@media (min-width: 576px) {
-  .entertain-containerr {
-    max-width: 540px;
-  }
-
-  .column2 {
-    max-width: 50%;
-  }
-}
-
-@media (min-width: 768px) {
-  .entertain-container {
-    max-width: 720px;
-  }
-
-  .column2 {
-    max-width: 33.333333%;
-  }
-}
-
-@media (min-width: 992px) {
-  .entertain-container {
-    max-width: 960px;
-  }
-
-  .column2 {
-    max-width: 33%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .entertain-container {
-    max-width: 1140px;
-  }
-
-} */
-
-/*--------------Entertainment Close--------------*/
 
 .cover-text{
 color: black; 
@@ -1339,11 +1104,132 @@ from {
 
   </nav>
   {% block content %}{% endblock %}
-  <section class="footer pb-5" style="background-color: #3A1078;">
+    <!-- Footer -->
+    <footer class="text-center text-lg-start text-white" style="background-color: #4E31AA">
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <!-- Section: Links -->
+        <section class="">
+          <!--Grid row-->
+          <div class="row">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">
+                About DaSpinstress
+              </h6>
+              <p>
+                At DaSpinstress LLC, we are passionate about the power of marketing to transform businesses and drive success. With a
+                team of dedicated experts and a proven track record of delivering exceptional results, we are here to be your trusted
+                partner on the path to achieving your marketing goals.
+              </p>
+            </div>
+            <!-- Grid column -->
+  
+            <hr class="w-100 clearfix d-md-none" />
+  
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">Services</h6>
+              <p>
+                <a class="text-white">Talent Management</a>
+              </p>
+              <p>
+                <a class="text-white">Media Production</a>
+              </p>
+              <p>
+                <a class="text-white">Event Management</a>
+              </p>
+              <p>
+                <a class="text-white">PR & Media Services</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+  
+            <hr class="w-100 clearfix d-md-none" />
+  
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">
+                Useful links
+              </h6>
+              <p>
+                <a href="{% url 'about' %}" class="text-white">Who we are?</a>
+              </p>
+              <p>
+                <a href="{% url 'foundation' %}" class="text-white">Foundation</a>
+              </p>
+              <p>
+                <a href="{% url 'contact' %}" class="text-white">Need help?</a>
+              </p>
+              <p>
+                <a href="" class="text-white">Private policy</a>
+              </p>
+            </div>
+  
+            <!-- Grid column -->
+            <hr class="w-100 clearfix d-md-none" />
+  
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+              <p><i class="fa fa-home mr-3"></i> 10 Marsh lane, Elkton, Maryland, 21921, United States</p>
+              <p><i class="fa fa-envelope mr-3"></i> info@daspinstressllc.com</p>
+              <p><i class="fa fa-phone mr-3"></i> +1 (443) 655-3808</p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!--Grid row-->
+        </section>
+        <!-- Section: Links -->
+  
+        <hr class="my-3">
+  
+        <!-- Section: Copyright -->
+        <section class="p-3 pt-0">
+          <div class="row d-flex align-items-center">
+            <!-- Grid column -->
+            <div class="col-md-7 col-lg-8 text-center text-md-start">
+              <!-- Copyright -->
+              <div class="p-3">
+                © 2023 Copyright:
+                <a class="text-white">DaSpinstress LLC</a>
+              </div>
+              <!-- Copyright -->
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+              <!-- Facebook -->
+              <a href="https://www.facebook.com/DjAkuaaDaSpinstress/" class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i
+                  class="fa fa-facebook-f"></i></a>
+  
+              <!-- Twitter -->
+              <a href="https://twitter.com/djakuaa" class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i
+                  class="fa fa-twitter"></i></a>
+  
+              <!-- YouTube -->
+              <a href="https://www.youtube.com/channel/UCIIqaSO3tuV5bE8rRVt3eTw" class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i
+                  class="fa fa-youtube"></i></a>
+  
+              <!-- Instagram -->
+              <a href="https://instagram.com/djakuaa" class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i
+                  class="fa fa-instagram"></i></a>
+            </div>
+            <!-- Grid column -->
+          </div>
+        </section>
+        <!-- Section: Copyright -->
+      </div>
+      <!-- Grid container -->
+    </footer>
+    <!-- Footer -->
+  <!-- End of .container -->
+  <!-- <section class="footer pb-5" style="background-color: #3A1078;">
     <div class="container">
       <div class="row">
         <div class="col-md-3 pt-5">
-          <h3 style="font-family: 'Merriweather', serif;" class="footer-title">Useful Links</h3>
+          <h3 style="font-family: 'Merriweather', serif;" class="footer-title">USEFUL LINKS</h3>
           <div class="pt-3">
             <ul>
               <li class="footer-list">
@@ -1362,7 +1248,7 @@ from {
           </div>
         </div>
         <div class="col-md-3 pt-5">
-          <h3 style="font-family: 'Merriweather', serif;" class="footer-title">Our Services</h3>
+          <h3 style="font-family: 'Merriweather', serif;" class="footer-title">OUR SERVICES</h3>
           <div class="pt-3">
             <ul>
               <li class="footer-list">
@@ -1387,7 +1273,7 @@ from {
           </div>
         </div>
         <div class="col-md-3 pt-5">
-          <h3 style="font-family: 'Merriweather', serif;" class="footer-title">Contact Us</h3>
+          <h3 style="font-family: 'Merriweather', serif;" class="footer-title">CONTACT US</h3>
           <div class="footer-text pt-3">
             <h6>10 Marsh lane, Elkton, Maryland, 21921, United States</h6>
             <br>
@@ -1396,7 +1282,7 @@ from {
           </div>
         </div>
         <div class="col-md-3 pt-5">
-          <h3 style="font-family: 'Merriweather', serif;" class="footer-title">About DaSpinstress</h3>
+          <h3 style="font-family: 'Merriweather', serif;" class="footer-title">ABOUT DASPINSTRESS</h3>
           <div class="footer-text pt-3">
             <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h6>
           </div>
@@ -1452,7 +1338,7 @@ from {
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="{% static 'index.js' %}"></script>
@@ -1470,6 +1356,25 @@ from {
     $(window).scroll(function () {
       $('nav').toggleClass('scrolled', $(this).scrollTop() > 100)
     })
+  </script>
+  <script>
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function (form) {
+            form.addEventListener('submit', function (event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
   </script>
 </body>
 

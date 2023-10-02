@@ -18,7 +18,7 @@
                     <img src="{{ client.image.url }}" height="300px" width="100%" alt="">
                     <div class="card-body">
                         <h3 class="card-title">{{ client.name }}</h3>
-                        <p class="card-text">{{ client.position }}</p>
+                        <h6 class="card-text">{{ client.position }}</h6>
                         <p class="card-content">{{ client.content }}</p>
                         <a class="btn btn-outline-secondary" href="{% url 'book' client.id %}">Book</a>
                     </div>

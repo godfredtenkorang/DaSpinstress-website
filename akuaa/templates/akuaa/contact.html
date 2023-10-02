@@ -25,16 +25,16 @@
         <h3 style="font-family: 'Merriweather', serif">Contact Us</h3>
         <div class="pt-3">
           <img src="{% static 'akuaa/images/location.png' %}" height="25px" width="35px" alt="" />
-          <span style="font-weight: bold">Address:</span><span> 10 Marsh lane, Elkton, Maryland, 21921, United
+          <span> 10 Marsh lane, Elkton, Maryland, 21921, United
             States</span>
         </div>
         <div class="mt-5">
           <img src="{% static 'akuaa/images/mail.png' %}" height="25px" width="35px" alt="" />
-          <span style="font-weight: bold">Email:</span><span> info@daspinstressllc.com</span>
+          <span> info@daspinstressllc.com</span>
         </div>
         <div class="mt-5">
           <img src="{% static 'akuaa/images/phone.png' %}" height="25px" width="35px" alt="" />
-          <span style="font-weight: bold">Phone:</span><span> +1 (443) 655-3808</span>
+          <span> +1 (443) 655-3808</span>
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12">
@@ -63,8 +63,7 @@
   </div>
 </section>
 <section class="location pt-1">
-  <div class="container">
-    <div class="mapouter">
+    <div class="mapouter embed-responsive embed-responsive-1by1">
       <div class="gmap_canvas">
         <iframe width="1080" height="503" id="gmap_canvas"
           src="https://maps.google.com/maps?q=10%20Marsh%20lane,%20Elkton,%20Maryland,%2021921,%20United%20States&t=&z=13&ie=UTF8&iwloc=&output=embed"
@@ -75,7 +74,7 @@
             position: relative;
             text-align: right;
             height: 503px;
-            width: 1080px;
+            width: 100%;
           }
         </style><a href="https://www.embedgooglemap.net"></a>
         <style>
@@ -83,11 +82,10 @@
             overflow: hidden;
             background: none !important;
             height: 503px;
-            width: 1080px;
+            width: 100%;
           }
         </style>
       </div>
     </div>
-  </div>
 </section>
 {% endblock %}

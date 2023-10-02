@@ -26,52 +26,74 @@
             <div class="col-lg-6 col-md-6 col-sm-12 pt-4 pb-4">
                 <h2>Book {{ books.name }}</h2>
                 <p>Please fill ths form below and I'll sure do get back to you asap</p>
-                <form id="form" method="POST" class="pt-4">
+                <form id="form" method="POST" class="needs-validation pt-4">
                     {% csrf_token %}
                     <div class="form-group">
                         <label for="fullname">Full Name</label>
-                        <input type="text" class="form-control form-control-lg mt-2" id="fullname" name="fullname">
-                       
+                        <input type="text" class="form-control form-control-lg mt-2" id="fullname" name="fullname" required>
+                    <div class="invalid-feedback">
+                        Please enter your name.
+                    </div>
                     </div>
                     <div class="form-group mt-2">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control form-control-lg mt-2" id="email" name="email">
-                    
+                        <input type="email" class="form-control form-control-lg mt-2" id="email" name="email" required>
+                    <div class="invalid-feedback">
+                        Please enter your email.
+                    </div>
                     </div>
                     <div class="form-group mt-2">
                         <label for="Phone">Phone Number</label>
-                        <input type="number" class="form-control form-control-lg mt-2" id="phone" name="phone">
-                        
+                        <input type="number" class="form-control form-control-lg mt-2" id="phone" name="phone" required>
+                        <div class="invalid-feedback">
+                            Please enter your phone number.
+                        </div>
                     </div>
                     <div class="form-group mt-2">
                         <label for="event">Event</label>
-                        <input type="text" class="form-control form-control-lg mt-2" id="event" name="event">
-                        
+                        <input type="text" class="form-control form-control-lg mt-2" id="event" name="event" required>
+                        <div class="invalid-feedback">
+                            Please enter event.
+                        </div>
                     </div>
                     <div class="form-group mt-2">
                         <label for="event_date">Event Date</label>
                         <input type="text" class="form-control form-control-lg mt-2" id="event_date" name="event_date"
-                            placeholder="dd/mm/yyyy">
+                            placeholder="dd/mm/yyyy" required>
+                            <div class="invalid-feedback">
+                                Please enter event date.
+                            </div>
                     </div>
                     <div class="form-group mt-2">
                         <label for="start_time">Start Time</label>
                         <input type="text" class="form-control form-control-lg mt-2" id="start_time" name="start_time"
-                            placeholder="00:00">
+                            placeholder="00:00" required>
+                            <div class="invalid-feedback">
+                                Please enter start time.
+                            </div>
                     </div>
                     <div class="form-group mt-2">
                         <label for="end_time">End Time</label>
                         <input type="text" class="form-control form-control-lg mt-2" id="end_time" name="end_time"
-                            placeholder="00:00">
+                            placeholder="00:00" required>
+                            <div class="invalid-feedback">
+                                Please enter end time.
+                            </div>
                         
                     </div>
                     <div class="form-group mt-2">
                         <label for="location">Location</label>
-                        <input type="text" class="form-control form-control-lg mt-2" id="location" name="location">
-    
+                        <input type="text" class="form-control form-control-lg mt-2" id="location" name="location" required>
+                        <div class="invalid-feedback">
+                            Please enter your location.
+                        </div>
                     </div>
                     <div class="form-group mt-2">
                         <textarea type="text" class="form-control mt-2" id="message" name="message" rows="4"
-                            placeholder="Message"></textarea>
+                            placeholder="Message" required></textarea>
+                            <div class="invalid-feedback">
+                                Please enter your message.
+                            </div>
                     </div>
                     <button type="submit" class="btn btn-outline-secondary mt-2">Submit
                     </button>
